@@ -1,0 +1,37 @@
+{
+    "manifest_version": 2,
+    "name": "Weather",
+    "version": "1.0",
+
+    "description": "Cleans up the Microsoft weather page",
+
+    "icons": {
+        "48": "icons/border-48.png"
+    },
+
+    "background": {
+        "scripts": ["background.js"]
+    },
+
+    "content_scripts": [
+        {
+            "matches": ["*://*.msn.com/*/weather/maps/*"],
+            "js": ["weather.js"]
+        }
+    ],
+
+    "browser_action": {
+        "default_icon": {
+            "16": "icons/page-16.png",
+            "32": "icons/page-32.png"
+        }
+    },
+
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "weather@ldonovan.org"
+        }
+    },
+
+    "permissions": ["*://*.msn.com/*/weather/maps/*"]
+}
